@@ -1,0 +1,30 @@
+{
+  "name": "metaowners",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Real-time Meta Ads Analytics Dashboard",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "db:migrate": "npm run db:migrate --workspace=@metaowners/database",
+    "db:seed": "npm run db:seed --workspace=@metaowners/database"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.16",
+    "prettier": "^3.0.3",
+    "eslint": "^8.50.0",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "packageManager": "npm@9.8.1"
+}
