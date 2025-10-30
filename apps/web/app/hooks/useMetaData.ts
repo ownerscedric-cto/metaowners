@@ -86,7 +86,7 @@ export interface DailyInsight {
 export interface User {
   id: string;
   name: string;
-  email: string;
+  email?: string;
   picture?: {
     data: {
       url: string;

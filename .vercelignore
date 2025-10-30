@@ -1,0 +1,5 @@
+apps/api
+packages/database
+turbo.json
+*.md
+.gitignore

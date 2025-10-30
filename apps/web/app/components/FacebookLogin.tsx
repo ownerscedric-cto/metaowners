@@ -2,25 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
-interface User {
-  id: string;
-  name: string;
-  email?: string;
-  picture?: {
-    data: {
-      url: string;
-    };
-  };
-}
-
-interface AdAccount {
-  id: string;
-  name: string;
-  account_id: string;
-  currency: string;
-  account_status: string;
-}
+import { User, AdAccount } from '../types';
 
 interface FacebookLoginProps {
   onLoginSuccess?: (user: User, adAccounts: AdAccount[], accessToken: string) => void;
