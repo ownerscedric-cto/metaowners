@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/",
-      "destination": "/dashboard",
-      "permanent": false
+      "destination": "/dashboard"
     }
   ]
 }
