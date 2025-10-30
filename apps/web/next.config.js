@@ -16,7 +16,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' data: https://fonts.gstatic.com",
               "img-src 'self' data: https:",
-              "connect-src 'self' https://graph.facebook.com https://*.supabase.co",
+              "connect-src 'self' http://localhost:3003 https://graph.facebook.com https://*.supabase.co",
               "frame-src 'self' https://www.facebook.com",
             ].join('; '),
           },
