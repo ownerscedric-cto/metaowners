@@ -145,7 +145,7 @@ export interface DateRange {
 }
 
 export interface InsightsRequest {
-  account_id: string;
+  account_id?: string;
   level?: 'account' | 'campaign' | 'adset' | 'ad';
   fields?: string[];
   time_range?: DateRange;

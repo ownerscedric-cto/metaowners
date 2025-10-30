@@ -29,7 +29,7 @@ export default function RootLayout({
                 <a href="/campaigns" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                   캠페인
                 </a>
-                <a href="/insights" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                <a href="/analysis" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                   분석
                 </a>
               </nav>

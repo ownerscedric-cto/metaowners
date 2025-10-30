@@ -10,7 +10,12 @@ const PORT = process.env.PORT || 3003;
 
 // Middleware
 app.use(cors({
-  origin: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'http://localhost:3002',
+    ...(process.env.NEXT_PUBLIC_APP_URL ? [process.env.NEXT_PUBLIC_APP_URL] : [])
+  ],
   credentials: true
 }));
 app.use(express.json());
@@ -21,7 +26,14 @@ app.get('/health', (req: Request, res: Response) => {
   res.json({ status: 'healthy', timestamp: new Date().toISOString() });
 });
 
+// Import routes
+import authRoutes from './routes/auth';
+import adsRoutes from './routes/ads';
+
 // API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/ads', adsRoutes);
+
 app.get('/api', (req: Request, res: Response) => {
   res.json({
     message: 'Meta Ads Platform API',
@@ -36,8 +48,9 @@ app.get('/api', (req: Request, res: Response) => {
       },
       ads: {
         accounts: '/api/ads/accounts',
-        campaigns: '/api/ads/campaigns',
-        insights: '/api/ads/insights'
+        campaigns: '/api/ads/accounts/:accountId/campaigns',
+        insights: '/api/ads/accounts/:accountId/insights',
+        summary: '/api/ads/accounts/:accountId/summary'
       }
     }
   });
